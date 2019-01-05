@@ -34,6 +34,9 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    # Admin 화면에서 기본적으로 Users와 Group 테이블이 보이는 이유
+    # django.contrib.auth라고 이미 정의가 되어 있기 때문
+    # Django에서 기본으로 제공하는 auth 앱에 Users와 Group 테이블이 미리 정의되어 있는 것임
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -82,6 +85,8 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+# 프로젝트에서 사용할 데이터베이스 엔진 설정
+# 디폴트는 SQLite3
 
 
 # Password validation
@@ -108,7 +113,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
+# 시간을 한국 표준시로 설정
 
 USE_I18N = True
 

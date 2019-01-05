@@ -1,0 +1,21 @@
+<h1>{{ question.question_text }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action = "{% url 'polls:vote' question.id %}" method = "post">
+    {% csrf_token %} 
+    <!-- csrf_token : 보안 조심 Cross Site Request Forgery 공격 조심 -->
+    {% for choice in question.choice_set.all %}
+        <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+        <!-- 라디오 버튼으로 답변 항목을 보여줌 -->
+        <label for = "choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+        <!-- for 루프를 실행한 횟수를 담고 있는 Template 변수 -->
+        <!-- <label for> 속성과 <input id> 속성은 값이 같아야 서로 바인딩됨 -->
+    {% endfor %}
+<input type = "submit" value="Vote" />
+<!-- 마지막에 Vote 버튼 누르면 투표한거 제출됨 -->
+</form>
+
+
+
+

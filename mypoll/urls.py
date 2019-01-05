@@ -15,7 +15,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from polls import views
+# Polls 투표를 Views로 해줘요
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
+# app_name = 'polls'
+
+urlpatterns = [ # URL / 뷰 매핑을 정의하는 방식은 항상 동일함
+    path('admin/', admin.site.urls), # Admin
+    path('polls/', views.index, name='index'), # 초기화면
+    path('polls/<int:question_id>/', views.detail, name='detail'), # 투표 질문거리 던져요
+    # 사용자가 질문 하나를 선택하면 detail() 뷰 함수가 호출되는 것임!
+    path('polls/<int:question_id>/results/', views.results, name='results'), # 투표 결과 보여줘요
+    path('polls/<int:question_id>/vote/', views.vote, name='vote'), # 투표하고 싶어요!
 ]
+
+# path('polls/<int:question_id>/vote/', views.vote, name='vote')
+#                  Routes                  Views      Name
+# Routes : URL 패턴을 표현하는 문자열
+# Views : URL 스트링이 매칭되면 호출되는 뷰 함수
+# Kwargs
+# Name : 각 URL 패턴별로 이름을 붙여줌. 여기서 정해진 이름은 Template 파일에서 많이 사용됨!
+
