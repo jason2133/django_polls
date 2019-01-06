@@ -16,6 +16,20 @@ class Question(models.Model): # 투표 질문
         return self.question_text
         # Question_text 문자열 리턴해라
 
+# 각 필드를 분리해서 보여주기
+# class QuestionAdmin(admin.ModelAdmin) :
+#     fieldsets = [
+#         ('Question Statement', {'fields' : ['question_text']}),
+#         ('Date Information', {'fields' : ['pub_date']}),
+#     ]
+
+# 필드를 접어서 보여주기
+# class QuestionAdmin(admin.ModelAdmin) :
+#     fieldsets = [
+#         ('Question Statement', {'fields' : ['question_text'], 'classes' : ['collapse']}),
+#         ('Date Information', {'fields' : ['pub_date'], 'classes' : ['collapse']}),
+#     ]
+
 class Choice(models.Model): # 투표 항목 선택
     question = models.ForeignKey(Question, on_delete = models.CASCADE)
     # 질문

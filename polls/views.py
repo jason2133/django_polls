@@ -17,11 +17,13 @@ def index(request): # 초기 화면
 
     context = {'latest_question_list' : latest_question_list}
     return render(request, 'polls/index.html', context)
+    # HTML Template와 연결
 
 def detail(request, question_id): # 디테일 - 질문 이름이랑 내용 불러오기
     question = get_object_or_404(Question, pk=question_id)
     # 조건에 맞는 객체 object가 없다면 HTTP 404 익셉션을 발생시킴
     return render(request, 'polls/detail.html', {'question' : question})
+    # HTML Template와 연결
 
 def vote(request, question_id): # 투표하기
     question = get_object_or_404(Question, pk=question_id)
@@ -49,6 +51,7 @@ def results(request, question_id):
     # 결과 보여주기
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/results.html', {'question' : question})
+    # HTML Template와 연결
 
 
 
