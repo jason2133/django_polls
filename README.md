@@ -9,7 +9,7 @@
 
 
 ## 투표 결과 - Cristiano Ronaldo! (https://localhost:8000/polls/1/results)
-![- vote](https://user-images.githubusercontent.com/37537208/50734973-9917bd00-11ea-11e9-93bc-e3fddb8f3f21.PNG)
+![default](https://user-images.githubusercontent.com/37537208/50734984-bb113f80-11ea-11e9-82e4-66237122e199.PNG)
 
 
 ## Admin (https://localhost:8000/admin/)
