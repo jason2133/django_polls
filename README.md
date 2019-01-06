@@ -11,6 +11,7 @@
 ## 투표 결과 - Cristiano Ronaldo! (https://localhost:8000/polls/1/results)
 ![default](https://user-images.githubusercontent.com/37537208/50734984-bb113f80-11ea-11e9-82e4-66237122e199.PNG)
 
+* Pluralize를 적용해서 처음 default는 0 Votes, 한 표면 1 Vote, 2표 이상이면 복수를 적용하여 Votes가 적용됨. 
 
 ## Admin (https://localhost:8000/admin/)
 ![admin](https://user-images.githubusercontent.com/37537208/50732540-5b05a380-11c0-11e9-9591-ca9501622996.PNG)
