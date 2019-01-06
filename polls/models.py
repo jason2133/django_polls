@@ -25,6 +25,7 @@ class Choice(models.Model): # 투표 항목 선택
     
     votes = models.IntegerField(default = 0)
     # 투표
+    # 기본값은 0이지 투표 값은
 
     def __str__(self):
         return self.choice_text

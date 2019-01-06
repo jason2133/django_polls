@@ -1,8 +1,11 @@
+<!-- 투표결과를 보여준다 -->
+
 <h1>{{ question.question_text }}</h1>
 
 <ul>
 {% for choice in question.choice_set.all %}
     <li>{{ choice.choice_text }} : {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    <!-- Pluralize를 통해 영어 단수/복수형 적용한다! -->
 {% endfor %}
 </ul>
 
